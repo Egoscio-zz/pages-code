@@ -1,0 +1,18 @@
+//- index.html
+
+include ./utils.jade
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    +style('style.css')
+    title Egoscio's Github Pages
+  body
+    h1 Welcome to my Github Page!
+    #popup
+      a#close(href='#') X
+      #pages
+    +script('jquery-latest.min.js')
+    +script('velocity.min.js')
+    +script('script.js')
