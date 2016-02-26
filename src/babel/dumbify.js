@@ -17,7 +17,7 @@ function shuffle(array) {
 
 function random(original) {
   var words = original.split(' ')
-  return words.map(function(word) {
+  return words.map(word => {
     if (word.length > 4) {
       word = word.split('')
       var first = word[0]
@@ -33,7 +33,7 @@ function random(original) {
   }).join(' ')
 }
 
-$('#dumb-form').on('submit', function(e) {
+$('#dumb-form').on('submit', e => {
   var $input = $('#dumb-form input')
   $input.val(random($input.val()))
   return false

@@ -2,7 +2,8 @@
 
 include ./utils.jade
 
-form#dumb-form
-  input(type='text', placeholder='Sentence')
-  button(type='submit') Dumbify
+#dumbify
+  form#dumb-form
+    input(type='text', placeholder='Sentence')
+    button(type='submit') Generate
 +script('dumbify.js')

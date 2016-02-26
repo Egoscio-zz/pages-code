@@ -2,6 +2,11 @@
 
 include ./utils.jade
 
+-
+  var pages = [
+    { page: 'dumbify', name: 'Dumbify' }
+  ]
+
 doctype html
 html(lang='en')
   head
@@ -9,8 +14,13 @@ html(lang='en')
     +style('style.css')
     title Egoscio's Github Pages
   body
-    h1 Welcome to my Github Page!
-    #popup
+    #logo
+      img(src='logo.png', alt='logo')
+    h2#title Egoscio's Slice of The Internet
+    #buttons
+      for page in pages
+        button(data-page=page.page)= page.name
+    #popup.hidden
       a#close(href='#') X
       #pages
     +script('jquery-latest.min.js')

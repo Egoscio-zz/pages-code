@@ -14,11 +14,12 @@ html, body, #main
   width: 100%
 
 body
-  background: #2c3e50
+  background: white
 
 body, input, button
   font-size: 1.5em
   font-family: 'Homenaje', sans-serif
+  color: #4a4a4a
 
 input, button
   display: block
@@ -26,10 +27,33 @@ input, button
   height: 2em
   width: 80%
   text-align: center
+  border: 3px solid #4a4a4a
+  border-radius: 5px
+  background-color: white
+  &:focus
+    outline: none
 
-#popup
+.hidden
   display: none
   opacity: 0
+
+#logo
+  img
+    height: 200px
+    width: 200px
+    display: block
+    margin: 20px auto
+
+#title
+  text-align: center
+
+#popup
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(255, 255, 255, 0.7)
 
 #close
   position: fixed
