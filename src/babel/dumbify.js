@@ -2,12 +2,12 @@
 
 'use strict'
 
-function shuffle(array) {
+function shuffle (array) {
   var m = array.length
   var t
   var i
   while (m) {
-    i = Math.floor(Math.random() * m--);
+    i = Math.floor(Math.random() * m--)
     t = array[m]
     array[m] = array[i]
     array[i] = t
@@ -15,9 +15,9 @@ function shuffle(array) {
   return array
 }
 
-function random(original) {
+function random (original) {
   var words = original.split(' ')
-  return words.map(word => {
+  return words.map((word) => {
     if (word.length > 4) {
       word = word.split('')
       var first = word[0]
@@ -33,7 +33,7 @@ function random(original) {
   }).join(' ')
 }
 
-$('#dumb-form').on('submit', e => {
+$('#dumb-form').on('submit', (e) => {
   var $input = $('#dumb-form input')
   $input.val(random($input.val()))
   return false

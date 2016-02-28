@@ -4,13 +4,13 @@
 
 var loaded = []
 
-function loadPage(page, success, error) {
+function loadPage (page, success, error) {
   success = success || (() => {})
   error = error || (() => {})
   $.get(page + '.html', success).fail(error)
 }
 
-function togglePopup() {
+function togglePopup () {
   var $popup = $('#popup')
   var isHidden = $popup.is(':hidden')
   $popup.velocity({
@@ -20,22 +20,22 @@ function togglePopup() {
   })
 }
 
-$('#buttons button, #close').on('click', e => {
-  togglePopup()
+$('#buttons button').on('click', (e) => {
+  var page = $(e.target).attr('data-page')
+  $('#pages div').css('display', 'none')
+  if (loaded.indexOf(page) === -1) {
+    loadPage(page, (data) => {
+      loaded.push(page)
+      $('#pages').append(data)
+      togglePopup()
+    })
+  } else {
+    $(`#${page}`).css('display', 'block')
+  }
   return false
 })
 
-$('#buttons button').on('click', e => {
-  var page = $(e.target).attr('data-page')
-  var $pages = $('#pages')
-  $('#pages div').css('display', 'none')
-  if (loaded.indexOf(page) === -1) {
-    loadPage(page, data => {
-      loaded.push(page)
-      $('#pages').append(data)
-    })
-  } else {
-   $(`#${page}`).css('display', 'block')
-  }
+$('#close').on('click', (e) => {
+  togglePopup()
   return false
 })
