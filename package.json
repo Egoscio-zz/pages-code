@@ -13,6 +13,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-jade": "^1.1.0",
-    "gulp-stylus": "^2.3.0"
+    "gulp-stylus": "^2.3.0",
+    "yargs": "^4.2.0"
   }
 }

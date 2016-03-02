@@ -1,11 +1,12 @@
 // gulpfile.js
 
+var argv = require('yargs').argv
 var gulp = require('gulp')
 var jade = require('gulp-jade')
 var babel = require('gulp-babel')
 var stylus = require('gulp-stylus')
 
-var dest = '../egoscio.github.io'
+var dest = argv.dir || '../egoscio.github.io'
 
 gulp.task('default', ['compile'])
 

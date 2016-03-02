@@ -31,6 +31,7 @@ $('#buttons button').on('click', (e) => {
     })
   } else {
     $(`#${page}`).css('display', 'block')
+    togglePopup()
   }
   return false
 })
