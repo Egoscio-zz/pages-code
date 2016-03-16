@@ -21,17 +21,26 @@ body, input, button
   font-family: 'Homenaje', sans-serif
   color: #4a4a4a
 
-input, button
+input, textarea, button
   display: block
   margin: 10px auto
-  height: 2em
   width: 80%
-  text-align: center
   border: 3px solid #4a4a4a
   border-radius: 5px
   background-color: white
   &:focus
     outline: none
+
+input, button
+  height: 2em
+  text-align: center
+
+textarea
+  max-width: 80%
+
+  font-size: 1.5em
+  font-family: 'Homenaje', sans-serif
+  color: #4a4a4a
 
 button
   transition-duration: 0.5s

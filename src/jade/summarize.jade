@@ -1,0 +1,10 @@
+//- summarize.jade
+
+include ./utils.jade
+
+#summarize
+  form#summarize-form
+    textarea.sentence(type='text', placeholder='Sentence')
+    input.threshold(type='number', placeholder='Threshold % [0-100]')
+    button(type='submit') Summarize
++script('summarize.js')
